@@ -1,0 +1,15 @@
+*.pyc
+.idea
+#db.sqlide3
+*.pyc
+#*.ini
+*.log
+*.pid
+static/*
+.vagrant/
+*.xml
+celerybeat-schedule
+bin/
+include/
+lib/
+local/
