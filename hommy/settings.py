@@ -14,7 +14,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+import djcelery
+djcelery.setup_loader()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -26,7 +27,7 @@ SECRET_KEY = '8nxsc(e76jwunhi%+@j$7*tgl(3=-=r863bg*fxv*86vn06irk'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+# CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
 
 # Application definition
 
@@ -104,6 +105,15 @@ BROKER_URL = "redis"
 BROKER_BACKEND = "redis"
 REDIS_HOST = "redis"
 REDIS_PORT = 6379
+############
+BROKER_USER = ""
+BROKER_PASSWORD = ""
+BROKER_VHOST = "0"
+REDIS_DB = 0
+REDIS_CONNECT_RETRY = True
+CELERY_SEND_EVENTS = True
+CELERY_RESULT_BACKEND = 'redis'
+CELERY_TASK_RESULT_EXPIRES = 10
 
 
 # Static files (CSS, JavaScript, Images)

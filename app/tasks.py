@@ -5,7 +5,7 @@ from celery import task
 from datetime import datetime, timedelta
 
 
-@task()
+@task(name='test_task')
 def test_task():
     """
     Test task.
