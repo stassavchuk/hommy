@@ -19,18 +19,13 @@ while true; do
 	echo "************************************************url_parametr= " $url_parametr
 	#curl http://95.164.164.67:8888/?request=$url_parametr
 	
-	#if [ $url_parametr = "time" ]; then
-	#	python get_time.py
-	#fi
+	if [ "$url_parametr" = "blink" ] || [ "$url_parametr" = "music_on" ];
+		then curl http://95.164.164.67:8888/?request="$url_parametr"
 	
-	
-	#if [ "$url_parametr" = "blink" ] || [ "$url_parametr" = "music_on" ];
-	#	then curl http://95.164.164.67:8888/?request="$url_parametr"
-	#fi
-	if [ "$url_parametr" = "time" ] ;
+	elif [ "$url_parametr" = "time" ] ;
 		then python get_time.py
 	
-	#else play repeat_command.mp3
+	else play repeat_command.mp3
 	fi	
 	
 	
