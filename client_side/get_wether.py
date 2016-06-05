@@ -36,6 +36,7 @@ def now():
 
     except:
         text = 'Ops. I can not proceed your question. Please try again.'
+    print text
     return text
 
 def text_to_voice(text):
