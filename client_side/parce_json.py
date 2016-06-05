@@ -8,9 +8,13 @@ import re
 def recognise_text():
 	normal_text = str(re.findall('transcript(.*?)result_index', str(sys.argv), re.DOTALL)).replace("'", ' ').replace('"', ' ').replace(':', ' ').replace("}"," ").replace("]"," ").replace(","," ").replace("\\"," ").replace("  "," ").replace("  "," ").replace("["," ").replace("true","").replace('final',"")
 	#print "++++++++++++++++++++++++normal_text: ", normal_text
-	if "go" in normal_text:
+	if "temperature" in normal_text:
+		print "weather"
+	elif "emergency" in normal_text or "message" in normal_text:
+		print "sms"
+	elif "go" in normal_text:
 		print "blink"
-	elif "music" in normal_text or "on" in normal_text:
+	elif "music" in normal_text:
 		print "music_on"
 	elif "time" in normal_text or "what" in normal_text or "is" in normal_text or "now" in normal_text:
 		print "time"
