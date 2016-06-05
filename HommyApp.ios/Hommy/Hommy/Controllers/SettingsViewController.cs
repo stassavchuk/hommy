@@ -45,9 +45,15 @@ namespace Hommy
 	        VoiceSegmantedController.ValueChanged += (sender, args) =>
 	        {
                 var selected = (sender as UISegmentedControl).SelectedSegment;
-                Console.WriteLine(selected);
                 NSUserDefaults.StandardUserDefaults.SetInt(selected, _voiceKey);
             };
+
+	        StartButton.Layer.MasksToBounds = true;
+	        StartButton.Layer.CornerRadius = 80;
+	        StartButton.TouchUpInside += (sender, args) =>
+	        {
+                Console.WriteLine("Listen...");
+	        };
 
 	    }
 	}

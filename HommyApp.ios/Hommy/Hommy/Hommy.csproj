@@ -150,6 +150,8 @@
     <BundleResource Include="Icons\musicTabBar%403x.png" />
     <BundleResource Include="Icons\musicTabBar.png" />
     <BundleResource Include="Icons\musicTabBar%402x.png" />
+    <BundleResource Include="Icons\play.png" />
+    <BundleResource Include="Icons\stop.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -3,6 +3,9 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Net;
+using System.Text;
 using System.Threading;
 using CoreGraphics;
 using Hommy.Models;
@@ -14,6 +17,7 @@ namespace Hommy
 	{
 	    private string _cellIdentifier = "TableCell";
 	    private List<Lamp> _lamps;
+        
 
         public LampsTableViewController (IntPtr handle) : base (handle)
 		{
@@ -29,6 +33,9 @@ namespace Hommy
             BackgroundWorker bw = new BackgroundWorker();
 	        bw.DoWork += (sender, args) => { Fetch(); };
             bw.RunWorkerAsync();
+
+	        //LightOn();
+
 	    }
 
 	    public override void ViewDidAppear(bool animated)
@@ -83,7 +90,6 @@ namespace Hommy
 
 	    public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 	    {
-	        base.RowSelected(tableView, indexPath);
             tableView.DeselectRow(indexPath, true);
         }
 
@@ -100,6 +106,19 @@ namespace Hommy
                     ChangeLampState(r.Next(_lamps.Count));
                 Thread.Sleep(200);
             }
+        }
+
+	    private void LightOn()
+	    {
+            string uri = Data.Instance.Ip + ":8888/?request=light_on";
+
+            Console.WriteLine("trying to ser request");
+            HttpWebRequest webrequest =
+	            (HttpWebRequest) WebRequest.Create(uri);
+            Console.WriteLine(webrequest);
+
+            //var res = webrequest.GetResponse();
+            //Console.WriteLine(res.ContentType);
         }
 	}
 }

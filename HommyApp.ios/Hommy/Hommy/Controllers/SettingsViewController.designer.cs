@@ -28,6 +28,10 @@ namespace Hommy
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton StartButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UISegmentedControl VoiceSegmantedController { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -43,6 +47,10 @@ namespace Hommy
 			if (NoiseSlider != null) {
 				NoiseSlider.Dispose ();
 				NoiseSlider = null;
+			}
+			if (StartButton != null) {
+				StartButton.Dispose ();
+				StartButton = null;
 			}
 			if (VoiceSegmantedController != null) {
 				VoiceSegmantedController.Dispose ();
