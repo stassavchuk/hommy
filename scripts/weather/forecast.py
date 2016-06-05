@@ -8,11 +8,11 @@ url = r'http://api.openweathermap.org/data/2.5/weather'
 CITY = 'Lviv'
 
 
-def _get_weather():
+def _get_weather(city):
     r = requests.get(
         url=url,
         params=dict(
-            q=CITY,
+            q=city,
             appid=appid
         )
     )
@@ -21,12 +21,14 @@ def _get_weather():
     return decoded
 
 
-def now():
+def now(city=None):
+    if not city:
+        city=CITY
     try:
-        data = _get_weather()
+        data = _get_weather(city)
 
         # general
-        text = 'There is ' + data['weather'][0]['description'] + ' in ' + CITY + '. '
+        text = 'There is ' + data['weather'][0]['description'] + ' in ' + city + '. '
 
         # temperature
         text += 'The temperature is ' + str(int(float(data['main']['temp']) - 272)) + ' degrees Celsius. '
@@ -41,4 +43,4 @@ def now():
 
 
 if __name__ == '__main__':
-    print now()
+    print now('London')
