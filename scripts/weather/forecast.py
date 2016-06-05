@@ -43,4 +43,4 @@ def now(city=None):
 
 
 if __name__ == '__main__':
-    print now('London')
+    print now('Odesa')
