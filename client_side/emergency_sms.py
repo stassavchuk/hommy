@@ -1,12 +1,17 @@
 from twilio.rest import TwilioRestClient
 import pyvona
+# ACCOUNT_SID = "AC3813dad5bbcbfcc2257efde2934ab169"
+# AUTH_TOKEN = "2b7d26b34696dcd84bb34ce23e80569c"
 ACCOUNT_SID = "AC3813dad5bbcbfcc2257efde2934ab169"
 AUTH_TOKEN = "2b7d26b34696dcd84bb34ce23e80569c"
 FROM = '+12012974072'
+######## 0ug9A+pdxiN8ElT5pjzFUnjw1DnDIVPePeZKzXsD
 
 # The phone in case of emergency
 TO = '+380505015275'
 NAME = 'Stas'
+# NAME = "Myroslav"
+# TO = '+380986271487'
 
 # Emergency text
 TEXT = 'Help me please!'

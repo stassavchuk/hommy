@@ -5,7 +5,7 @@ play bing.mp3
 play bing.mp3
 
 # start recording audio
-rec -V recording.flac rate 48k silence 0 1 0:00:01 23% silence 0 1 00:00:1 0%
+rec -V recording.flac rate 48k silence 0 1 0:00:01 8% silence 0 1 00:00:05 0%
 
 #play it
 play recording.flac
@@ -32,6 +32,10 @@ elif [ "$url_parametr" = "weather" ] ;
 	then python get_wether.py
 elif [ "$url_parametr" = "sms" ] ;
 	then python emergency_sms.py
+elif [ "$url_parametr" = "who_are_you" ] ;
+	then python who_are_you.py
+elif [ "$url_parametr" = "introduce" ] ;
+	then python introduce_our_project.py
 else play repeat_command.mp3
 fi	
 

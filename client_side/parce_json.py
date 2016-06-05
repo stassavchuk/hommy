@@ -8,16 +8,20 @@ import re
 def recognise_text():
 	normal_text = str(re.findall('transcript(.*?)result_index', str(sys.argv), re.DOTALL)).replace("'", ' ').replace('"', ' ').replace(':', ' ').replace("}"," ").replace("]"," ").replace(","," ").replace("\\"," ").replace("  "," ").replace("  "," ").replace("["," ").replace("true","").replace('final',"")
 	#print "++++++++++++++++++++++++normal_text: ", normal_text
-	if "temperature" in normal_text:
+	if "temperature" in normal_text or "tell" in normal_text or "about" in normal_text:
 		print "weather"
-	elif "emergency" in normal_text or "message" in normal_text:
+	elif "emergency" in normal_text or "message" in normal_text or "imagine" in normal_text:
 		print "sms"
-	elif "go" in normal_text:
+	elif "sunshine" in normal_text or "sun" in normal_text or "shin" in normal_text or "Sasha" in normal_text:
 		print "blink"
 	elif "music" in normal_text:
 		print "music_on"
-	elif "time" in normal_text or "what" in normal_text or "is" in normal_text or "now" in normal_text:
+	elif "time" in normal_text or "what" in normal_text:
 		print "time"
+	elif "who" in normal_text or "are" in normal_text:
+		print "who_are_you"
+	elif "introduce" in normal_text or "project" in normal_text or "intro" in normal_text:
+		print "introduce"
 
 
 recognise_text()
