@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Beats UK Radio",
+        "stream_url": "http://142.4.217.133:8691"
+    },
+    {
+        "name": "Live Shows-NSBRadio.co.uk",
+        "stream_url": "http://65.23.157.233:7904"
+    },
+    {
+        "name": "MUSIK.BIGCITYBEATS",
+        "stream_url": "http://95.141.24.90:80"
+    },
+    {
+        "name": "Noise FM - Modern Electronic Radio",
+        "stream_url": "http://noisefm.ru:8000/play"
+    },
+    {
+        "name": "Noise FM - Modern Electronic Radio",
+        "stream_url": "http://noisefm.ru:8000/play"
+    },
+    {
+        "name": "BEETHOVEN",
+        "stream_url": "http://37.59.42.207:8361/stream"
+    },
+    {
+        "name": "MOZART",
+        "stream_url": "http://37.59.42.207:8355/stream"
+    },
+    {
+        "name": "1Radio.FM - Metal - Thrash - Hardcore",
+        "stream_url": "http://192.232.192.96:9974/stream"
+    }
+]
